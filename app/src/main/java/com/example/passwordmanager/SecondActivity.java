@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class SecondActivity extends AppCompatActivity {
 
     DatabaseHelper myDB;
-    Button btnADD,btnView;
+    Button btnADD,btnView,btnReport;
     EditText editText;
 
     @Override
@@ -23,6 +23,7 @@ public class SecondActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         btnADD = (Button) findViewById(R.id.btnAdd);
         btnView = (Button) findViewById(R.id.btnView);
+        btnReport = (Button) findViewById(R.id.btnReport);
         myDB = new DatabaseHelper(this);
 
         btnView.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +33,14 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SecondActivity.this, report.class);
+                startActivity(i);
+            }
+        });
+
 
         btnADD.setOnClickListener(new View.OnClickListener() {
             @Override
